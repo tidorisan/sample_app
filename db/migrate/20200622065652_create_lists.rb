@@ -9,3 +9,9 @@ class CreateLists < ActiveRecord::Migration[5.2]
     end
   end
 end
+
+
+ # :lists do  |t|
+ # 	t.string :title
+
+ # カラム　項目　
