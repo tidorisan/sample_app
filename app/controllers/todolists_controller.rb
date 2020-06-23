@@ -1,7 +1,21 @@
 class TodolistsController < ApplicationController
-  def new
-  	#viewへ絵渡すためのインスタント変数にからのモデルオブジェを作る
-  	@list = List.new
-  	# List.new インスタンス変数名
-  end
+    def new
+        # Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する。
+        @list = List.new
+    end
+
+    # 以下を追加
+    def create
+        # ストロングパラメーターを使用
+         list = List.new(list_params)
+        # DBへ保存する
+         list.save
+        # トップ画面へリダイレクト
+        redirect_to '/top'
+    end
+    private
+
+    def list_params
+        params.require(:list).permit(:title, :body)
+    end
 end
