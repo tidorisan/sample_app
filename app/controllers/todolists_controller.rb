@@ -4,6 +4,11 @@ class TodolistsController < ApplicationController
         @list = List.new
     end
 
+    # ruby_6機能　全てのデータを渡す
+    def index
+        @lists = List.all
+    end
+
     # 以下を追加
     def create
         # ストロングパラメーターを使用

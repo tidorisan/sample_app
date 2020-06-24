@@ -5,5 +5,8 @@ Rails.application.routes.draw do
 
   get 'top' => 'homes#top'
 
-  post 'todolists' => 'todolists#create'
+  post 'todolists' => 'todolists#create'””’’
+
+# ruby-6 閲覧機能を作ろう
+  get "todolist" => "todolists#index"
 end
