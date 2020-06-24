@@ -1,12 +1,22 @@
+# Rails.application.routes.draw do
+#   get 'todolists/new'
+
+#   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+#   get 'top' => 'homes#top'
+
+#   post 'todolists' => 'todolists#create'
+
+#   get "todolists" => 'todolists#index'
+# end
 Rails.application.routes.draw do
-  get 'todolists/new'
+      # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+      get 'todolists/new'
+      get 'top' => 'homes#top'
+      post 'todolists' => 'todolists#create'
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+     get 'todolists' => 'todolists#index'
+     # 詳細ページへの
+     get 'todolists/:id' => 'todolists#show', as:'todolist'
 
-  get 'top' => 'homes#top'
-
-  post 'todolists' => 'todolists#create'””’’
-
-# ruby-6 閲覧機能を作ろう
-  get "todolist" => "todolists#index"
-end
+ end
