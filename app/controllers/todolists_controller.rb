@@ -36,6 +36,7 @@ class TodolistsController < ApplicationController
         list = List.find(params[:id])
         list.destroy
         redirect_to todolists_path
+        
     end
 
     private
